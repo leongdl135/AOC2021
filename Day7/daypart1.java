@@ -21,34 +21,13 @@ public class daypart1 {
            total += numbers[i];
         }
 
-        int max = 0;
-        int min = 100;
-
+        Arrays.sort(numbers);
+        int median = numbers[numbers.length/2];
+        int sum = 0; 
         for(int i = 0; i < numbers.length; i++) {
-           if (numbers[i] > max) {
-              max = numbers[i];
-           }
-           if (numbers[i] < min) {
-              min = numbers[i];
-           }
-        }
-        long leastFuelUsed = 100000000;
-        for(int i = min; i <= max; i++) {
-           long sum = 0;
-           for(int j = 0; j < numbers.length; j++) {
-               sum += Math.abs(i - numbers[j]);
-           }
-           if (sum < leastFuelUsed) {
-              leastFuelUsed = sum;
-           }
+           sum += Math.abs(median- numbers[i]);
         }
 
-        System.out.println("fuel: " + leastFuelUsed);
-        
-         
-        
-        
-
-
-   } 
+        System.out.println("Fuel Used: " + sum);
+   }
 }
