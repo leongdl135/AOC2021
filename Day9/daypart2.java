@@ -12,7 +12,7 @@ public class daypart2 {
         Scanner scanner = new Scanner(new File("input.txt"));
         //ArrayList<Integer> numbers = new ArrayList<>();
         int a = 0;
-	     String[][] grid = new String[100][];
+	String[][] grid = new String[100][];
        
          while(scanner.hasNextLine()) {
             String input = scanner.nextLine();
