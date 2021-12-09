@@ -29,15 +29,18 @@ public class daypart2 {
 
         int marker = -1;
 
-        for(int i = 0; i < 100; i++) {
-           for(int j = 0; j < 100; j++) {
-              if (number[i][j] == 0) {
-                 dfs(i, j, marker);
-                 marker--;
-              }
-           }
-        }
-      int[] reference = new int[100];
+        for(int k = 0; k < 9; k++) {
+            for(int i = 0; i < 100; i++) {
+               for(int j = 0; j < 100; j++) {
+                     if (number[i][j] == k) {
+                           dfs(i, j, marker);
+                           marker--;
+                     }
+                  } 
+               }
+            }
+
+      int[] reference = new int[300];
        for(int i = 0; i < 100; i++) {
           for(int j = 0; j < 100; j++) {
             if (number[i][j] < 0) {
@@ -46,11 +49,11 @@ public class daypart2 {
           }
        }
 
-       //finding the maximum 
+      
        int max1 = 0;
        int max2 = 0; 
        int max3 = 0;
-       for(int i = 0; i < 100; i++) {
+       for(int i = 0; i < 300; i++) {
           if (reference[i] > max1) {
              max3 = max2;
              max2 = max1;
