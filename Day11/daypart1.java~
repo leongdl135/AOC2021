@@ -1,0 +1,26 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner; 
+//import java.util.ArrayList;
+import java.util.Arrays;
+
+public class daypart1 {
+   public static int[][] grid = new int[10][];
+   public static void main(String[] args) throws FileNotFoundException {
+        Scanner scanner = new Scanner(new File("input.txt"));
+        //ArrayList<Integer> numbers = new ArrayList<>();
+
+        while(scanner.hasNextLine()) {
+		String input = scanner.nextLine();
+		String[] parts = input.split("");
+		int[] temp = new int[10];
+		for(int i = 0; i < 10; i++) {
+			temp[i] = Integer.valueOf(parts[i]);
+		}
+		grid[grid.length] = temp;
+        }
+
+        System.out.println(Arrays.deepToString());
+
+   } 
+}
